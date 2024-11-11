@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="text" id="text" />
+    <input type="submit" value="button" , id="button" />
+    <p id="paragrahs"></p>
+    <script>
+      const text = document.getElementById("text");
+      const parag = document.getElementById("paragrahs");
+      const button = document.getElementById("button");
+      const Masina = {
+        Marka: "Bmw",
+        Modelis: "316",
+        Gads: 1998,
+        Krasa: "Sarkans",
+        Cena: "5 Dolar",
+      };
+      function clicker() {
+        if (text.value == Masina.marka) {
+            console.log(text.value);
+          parag.innerHTML = Masina.Modelis;
+        }
+      }
+      button.addEventListener("click", clicker);
+    </script>
+  </body>
+</html>
