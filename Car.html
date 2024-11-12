@@ -7,12 +7,10 @@
   </head>
   <body>
     <input type="text" name="text" id="text" />
-    <input type="submit" value="button" , id="button" />
+    <input type="submit" value="button" id="button" />
     <p id="paragrahs"></p>
+
     <script>
-      const text = document.getElementById("text");
-      const parag = document.getElementById("paragrahs");
-      const button = document.getElementById("button");
       const Masina = {
         Marka: "Bmw",
         Modelis: "316",
@@ -20,13 +18,25 @@
         Krasa: "Sarkans",
         Cena: "5 Dolar",
       };
-      function clicker() {
-        if (text.value == Masina.marka) {
-            console.log(text.value);
-          parag.innerHTML = Masina.Modelis;
+
+      function mekletAtributu() {
+        const atributs = document.getElementById("text").value;
+
+        const rezultats = Masina[atributs];
+
+        if (rezultats) {
+          document.getElementById("paragrahs").textContent =
+            "Atribūta vērtība: " + rezultats;
+          console.log("STRADA");
+        } else {
+          document.getElementById("paragrahs").textContent =
+            "Atribūts netika atrasts.";
         }
       }
-      button.addEventListener("click", clicker);
+
+      document
+        .getElementById("button")
+        .addEventListener("click", mekletAtributu);
     </script>
   </body>
 </html>
